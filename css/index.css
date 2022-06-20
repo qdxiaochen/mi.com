@@ -1,0 +1,798 @@
+/* 清除所有元素内外边距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  color: #333;
+} */
+
+/* 清除所有 a 标签的下划线 */
+a {
+  display: block;
+  text-decoration: none;
+}
+
+/* 清除所有 ul 的默认样式 */
+ul {
+  list-style: none;
+}
+
+/* 清除浮动 */
+.clearfix::after,
+.clearfix::before
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* 客户端设置背景颜色 */
+.client {
+  width: 100%;
+}
+
+/* 版心 */
+.wrapper {
+  margin: 0 auto;
+  width: 1226px;
+}
+
+/* ------------------------------------ */
+
+/* topbar 顶部导航栏 */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  box-sizing: border-box;
+}
+
+/* topbar 所有 a 元素 统一样式 */
+.topbar a {
+  display: inline-block;
+  height: 40px;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+/* sep 分割线 */
+.topbar .sep {
+  margin: 0 6px;
+  color: #3c4242;  
+}
+
+/* ----------------------------------------- */
+
+/* 左侧 ul */
+.topbar  li {
+  float: left;
+  line-height: 40px;
+}
+
+/* 二维码 显示与隐藏 */
+.topbar .left li:nth-child(21) span {
+  position: absolute;
+  top: 40px;
+  left: 568px;
+  display: none;
+  /* 内减模式，padding 和 border 不需要手动减法了 */
+  box-sizing: border-box;
+  padding: 15px;
+  padding-bottom: 30px;
+  width: 120px;
+  height: 150px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.topbar .left li:nth-child(21):hover span {
+  display: block;
+  color: #333;
+}
+
+.topbar .left li:nth-child(21) img {
+  width: 90px;
+  height: 90px;
+}
+
+.topbar .left li:nth-child(21) .text {
+  margin-top: -10px;
+}
+
+.topbar a:hover {
+  color: #fff;
+}
+
+/* ----------------------------------------- */
+
+/* 右侧 ul */
+.topbar .right{
+  margin-right: -220px;
+}
+
+.topbar .right li {
+  /* 这里还是要左浮动，不然排序会倒，父盒子已经有了 flex 布局 */
+  float: left;
+}
+
+
+/* ------------------------------------------ */
+
+/* 购物车 */
+.topbar .car {
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #424242;
+  /* background-color: #fff; */
+  /* margin-right: 20px; */
+}
+
+.topbar .car:hover,
+.topbar .car:hover i,
+.topbar .car:hover a
+{
+  background-color: #fff;
+  color: #ff6700;
+}
+
+.topbar .car i {
+  float: left;
+  margin: 0 5px 0 20px;
+  color: #b0b0b0;
+}
+
+.topbar .car a {
+  float: left;
+  /* width: 100%; */
+  height: 40px;
+}
+
+/* ---------------------------------------- */
+
+/* header 导航 */
+.header {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+
+.header .wrapper .header-logo {
+  float: left;
+}
+
+.header .wrapper .header-logo a {
+  height: 100px;
+  line-height: 100px;
+}
+
+.header .header-logo img {
+  padding-top: 22px;
+  width: 56px;
+  height: 56px;
+}
+
+/* ul 列表 */
+.header .header-nav ul {
+  margin-left: 245px;
+}
+
+.header .header-nav ul li {
+  float: left;
+  margin-right: 18px;
+}
+
+.header .header-nav ul li a {
+  display: block;
+  height: 100px;
+  color: #333;
+}
+
+.header .header-nav ul li:hover a {
+  color: #ff6700;
+}
+
+/* 搜索框 */
+.header .search {
+  position: absolute;
+  top: 40px;
+  right: 19px;
+}
+
+.header .search:hover input {
+  border: 1px solid #b0b0b0;
+}
+
+.header .search .search-ipt {
+  padding: 0 10px;
+  width: 223px;
+  height: 48px;
+  outline: none;
+  border: 1px solid #e0e0e0;
+}
+
+.header .search .search-btn {
+  margin-left: -6px;
+  /* 这里按钮不能居中，要加这句中线对齐 */
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+.header .search .search-btn:hover {
+  background-color: #ff6700;
+  color: #fff;
+}
+
+.header .search i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  right: 17px;
+}
+
+.header .search i:hover {
+  color: #fff;
+  background-color: #ff6700;
+}
+
+/* -------------------------------------- */
+
+/* main 主体 */
+.main {
+  height: 460px;
+}
+
+.main .wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.main .aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 234px;
+  height: 100%;
+}
+
+.main .aside ul {
+  padding: 20px 0;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(105, 101, 101, .6);
+}
+
+.main .aside ul li {
+  position: relative;
+  padding-left: 30px;
+  height: 42px;
+  line-height: 42px;
+}
+
+.main .aside ul li:hover {
+  background-color: #ff6700;
+}
+
+.main .aside ul li a {
+  color: #fff;
+}
+
+.main .aside ul li a::after {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  content: '>';
+  color: #e0e0e0;
+}
+
+.main .content {
+  height: 100%;
+}
+
+/* 内容区 */
+.main .content ul {
+  /* width: 7356px; */
+  height: 100%;
+}
+
+.main .content li {
+  float: left;
+}
+
+.main .content img {
+  width: 1226px;
+  height: 460px;
+}
+
+/* 轮播图按键 */
+.main .prev,
+.main .next {
+  position: absolute;
+  top: 195px;
+  width: 42px;
+  height: 69px;
+  background-color: #fff;
+}
+
+.main .prev {
+  left: 234px;
+  background: url(../images/icon-slides.png) -83px;
+}
+
+.main .prev:hover {
+  background: url(../images/icon-slides.png);
+}
+
+.main .next {
+  right: 0;
+  background: url(../images/icon-slides.png) -122px;
+}
+
+.main .next:hover {
+  background: url(../images/icon-slides.png) -41px;
+}
+
+/* 轮播图小圆点 */
+.main .dian {
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+}
+
+.main .dian li {
+  float: left;
+}
+
+.main .dian li a {
+  display: block;
+  margin: 0 4px;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #969696;
+  border-radius: 50%;
+  background-color: #736b6e;
+}
+
+.main .dian li:first-child a {
+  background-color: #fff;
+}
+
+.main .dian li a:hover {
+  background-color: #fff;
+}
+
+/* --------------------------------- */
+
+/* home-hero-sub */
+.home-hero-sub .wrapper {
+  margin: 14px auto 25px;
+  height: 170px;
+}
+
+.home-hero-sub .wrapper div {
+  float: left;
+  height: 170px;
+  background-color: #5f5750;
+}
+
+.home-hero-sub .wrapper .one {
+  margin-right: 14px;
+  padding: 3px;
+  width: 234px;
+  box-sizing: border-box;
+}
+
+.home-hero-sub .wrapper .one ul li {
+  position: relative;
+  float: left;
+  padding: 0 3px;
+  width: 70px;
+  height: 82px;
+  text-align: center;
+}
+
+.home-hero-sub .wrapper .one ul li::before,
+.home-hero-sub .wrapper .one ul li::after {
+  position: absolute;
+  content: '';
+  background: #665e57;
+}
+
+.home-hero-sub .wrapper .one ul li::before {
+  top: -1px;
+  left: 3px;
+  width: 70px;
+  height: 1px;
+}
+
+.home-hero-sub .wrapper .one ul li::after {
+  top: 2px;
+  right: 0;
+  width: 1px;
+  height: 76px;
+}
+
+.home-hero-sub .wrapper .one ul li:nth-child(-n+3)::before {
+  height: 0;
+}
+
+.home-hero-sub .wrapper .one ul li:nth-child(3n):after {
+  width: 0;
+}
+
+.home-hero-sub .wrapper .one ul li a {
+  padding-top: 18px;
+  width: 70px;
+  height: 46px;
+  text-align: center;
+  font-size: 12px;
+  color: #cfccca;
+}
+
+.home-hero-sub .wrapper .one ul li a:hover,
+.home-hero-sub .wrapper .one ul li a:hover img
+{
+  color: #fff;
+  opacity: 1;
+}
+
+.home-hero-sub .wrapper .one img {
+  margin: 0 23px 4px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+}
+
+.home-hero-sub .wrapper .two {
+  width: 316px;
+}
+
+.home-hero-sub .wrapper img {
+  width: 316px;
+  vertical-align: top;
+}
+
+.home-hero-sub .wrapper .three,
+.home-hero-sub .wrapper .four {
+  width: 316px;
+  margin-left: 15px;
+}
+
+/* ---------------------------------------- */
+
+/* 页面主体 */
+.page_main {
+  padding: 20px 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+/* 宽图区 */
+.page_main .kuantu {
+  margin-top: 2px;
+}
+
+.page_main .kuantu img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+/* 手机区 */
+.page_main .phone {
+  margin: 20px 0;
+}
+
+.page_main .text {
+  height: 58px;
+}
+
+.page_main .text h2 {
+  float: left;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 58px;
+  color: #333;
+}
+
+.page_main .text a {
+  float: right;
+  font-size: 16px;
+  line-height: 58px;
+  color: #424242;
+}
+
+.page_main .text a i {
+  margin-left: 8px;
+  opacity: 0.5;
+}
+
+.page_main .text a:hover,
+.page_main .text a:hover i
+{
+  color: #ff6700;
+  opacity: 1;
+}
+
+/* 手机链接区 */
+.page_main .phone-link {
+  width: 100%;
+  height: 614px;
+}
+
+.page_main .phone-link .paside {
+  float: left;
+}
+
+.page_main .phone-link .paside a {
+  transform: translateY(0px);
+  transition: all .2s;
+}
+
+.page_main .phone-link .paside img {
+  width: 234px;
+  height: 614px;
+  background-color: #fff;
+  vertical-align: top;
+}
+
+.page_main .phone-link .pcontainer {
+  float: left;
+  width: 992px;
+  height: 614px;
+}
+
+.page_main .phone-link .pcontainer li {
+  float: left;
+  margin: 0 0 14px 14px;
+  width: 234px;
+  height: 300px;
+  background-color: #fff;
+  transform: translateY(0px);
+  transition: all .2s;
+}
+
+.page_main .phone-link .pcontainer li a {
+  padding: 20px 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.page_main .phone-link .pcontainer li img {
+  margin: 0 37px 18px 37px;
+  width: 160px;
+  height: 160px;
+}
+
+.page_main .phone-link .pcontainer li .title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+
+.page_main .phone-link .pcontainer li .desc {
+  margin: 2px 10px 10px;
+  font-size: 12px;
+  color: #b0b0b0;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.page_main .phone-link .pcontainer li .price {
+  font-size: 14px;
+  text-align: center;
+  color: #ff6700;
+}
+
+.page_main .phone-link .pcontainer li del {
+  color: #b0b0b0;
+}
+
+.page_main .phone-link .paside a:hover,
+.page_main .phone-link li:hover 
+{
+  box-shadow: 0px 5px 10px #b0b0b0;
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------- */
+
+/* site-footer 网页脚部 */
+.site-footer .footer-service ul {
+  display: flex;
+  height: 80px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.site-footer .footer-service ul li {
+  float: left;
+  align-self: center;
+  width: 242.74px;
+  height: 25px;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.site-footer .footer-service ul li:nth-child(5) {
+  border-right: 0;
+}
+
+.site-footer .footer-service ul li a {
+  display: inline;
+  color: #616161;
+}
+
+.site-footer .footer-service ul li a .iconfont {
+  font-size: 24px;
+  vertical-align: bottom;
+}
+
+.site-footer .footer-service ul li a:hover {
+  color: #ff6700;
+}
+
+/* footer-links 页脚链接 */
+.footer-links {
+  padding: 40px 0 40px 160px;
+}
+
+.footer-links dl {
+  float: left;
+  width: 160px;
+}
+
+.footer-links dl dt {
+  font-size: 14px;
+  margin-bottom: 26px;
+  color: #424242;
+}
+
+.footer-links dl dd {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.footer-links dl dd a {
+  color: #757575;
+}
+
+.footer-links dl dd a:hover {
+  color: #ff6700;
+}
+
+/* contact 联系区 */
+.footer-links .contact {
+  float: right;
+  width: 250px;
+  border-left: 1px solid #e0e0e0;
+  text-align: center;
+  color: #616161;
+}
+
+.footer-links .contact .phone {
+  font-size: 22px;
+  color: #ff6700;
+}
+
+.footer-links .contact p:nth-child(2) {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.footer-links .contact a {
+  display: inline-block;
+  width: 118px;
+  height: 28px;
+  font-size: 12px;
+  line-height: 28px;
+  border: 1px solid #ff6700;
+  color: #ff6700;
+  transition: all .4s;
+}
+
+.footer-links .contact a:hover {
+  color: #fff;
+  background-color: #ff6700;
+}
+
+/* follow */
+.footer-links .contact .follow {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.footer-links .contact .follow img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+/* ------------------------------------------- */
+
+/* site-info 网页详情 */
+.site-info {
+  padding: 30px 0;
+  font-size: 12px;
+  background: #fafafa;
+}
+
+.site-info .container {
+  position: relative;
+}
+
+.site-info .logo {
+  width: 56px;
+  height: 56px;
+  background-image: url(../images/logo-mi2.png);
+  background-size: 56px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.site-info .info-text,
+.site-info .info-links
+{
+  padding-left: 77px;
+  line-height: 18px;
+}
+
+.site-info .info-text .sites {
+  margin-bottom: 2px;
+}
+
+.site-info .info-text a {
+  display: inline;
+  color: #757575;
+}
+
+.site-info .info-text p:nth-child(3) a {
+  color: #b0b0b0;
+}
+
+.site-info .info-text a:hover {
+  color: #ff6700;
+}
+
+.site-info .info-text p:nth-child(3) a:hover {
+  color: #ff6700;
+}
+
+.site-info .info-text span {
+  color: #b0b0b0;
+}
+
+/* info-links */
+.site-info .info-links {
+  margin: 4px 0 15px;
+}
+
+.site-info .info-links a {
+  display: inline-block;
+}
+
+.site-info .info-links img {
+  height: 28px;
+}
+
+.site-info .slogan {
+  margin-top: 50px;
+  height: 21px;
+  text-indent: -9999px;
+  background: url(../images/slogan2020.png) no-repeat center;
+}
